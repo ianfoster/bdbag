@@ -8,11 +8,8 @@ In brief, it:
 * Uses `minid_client_api.get_entities` to fetch metadata about each sub-bag
 * Uses `bdbag_api.make_bag` to create the new bag containing references to the sub-bags
 * Uses several `bdbag_ro` functions to create the Research Object describing the new bag
-It also creates a `README` file containing a list of sub-bag titles.
 
-If you want to validate a newly created bag of bags, then the `-v` option will also:
-* Use `bdbag_api.resolve_fetch` to download the sub-bags
-* Use `bdbag_api.validate_bag` to validate the complete bag of bags
+It also creates a `README` file containing a list of sub-bag titles.
 
 For example, the following creates a bag called `MYBAG` containing the bags listed in
 the file `MYMINIDS`, with specified author name and ORCID.
@@ -28,4 +25,7 @@ In addition, the `data/README` file contains background information.
 
 ![Image of the whole thing](images/MetaBags.png)
 
-`
+If you want to validate a newly created bag of bags, then the `-v` option will also:
+* Use `bdbag_api.resolve_fetch` to download the sub-bags
+* Use `bdbag_api.validate_bag` to validate the complete bag of bags
+
