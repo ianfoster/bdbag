@@ -37,11 +37,11 @@ from bdbag import bdbag_ro as ro
 import minid_client.minid_client_api as mn
 from bdbag import VERSION, BAGIT_VERSION
 
-NAME2THING      = 'http://n2t.net/'
-MINID_SERVER    = 'http://minid.bd2k.org/minid'
+NAME2THING   = 'http://n2t.net/'
+MINID_SERVER = 'http://minid.bd2k.org/minid'
 
 
-def add_remote_file_manifest(entries, ro_manifest):
+def add_remote_file_manifest_to_ro(ro_manifest, entries):
     for (minid, _, _, uri, _, _) in entries:
          ro.add_aggregate(ro_manifest, NAME2THING+minid,
                           mediatype=None,
@@ -154,7 +154,7 @@ def main(argv):
     ro_manifest = ro.init_ro_manifest(author_name=args.author_name, author_orcid=args.author_orcid,
         creator_name = 'bagofbags using BDBag version: %s (Bagit version: %s)' % (VERSION, BAGIT_VERSION),
         creator_uri='https://github.com/ini-bdds/bdbag/examples/bagofbags/')
-    add_remote_file_manifest(minid_fields, ro_manifest)
+    add_remote_file_manifest_to_ro(ro_manifest, minid_fields)
     bag_metadata_dir = os.path.abspath(os.path.join(args.bagname, 'metadata'))
     if not os.path.exists(bag_metadata_dir):
         os.mkdir(bag_metadata_dir)
