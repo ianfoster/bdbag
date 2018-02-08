@@ -1,21 +1,10 @@
 # BagOfBags.py -- Ian Foster
 #
-# Program to create a big data bag (BDBag) containing a supplied set of (descriptive string, Minid) pairs,
+# Program to create a big data bag (BDBag) containing a supplied set of Minids,
 # each of which is assumed to reference a single BDBag. This BDBag contains:
 # -- A data/README file listing the files referenced by the Minids
 # -- A metadata/manifest.json with a Research Object describing the BDBag's contents
 # -- A fetch.txt file with the info required to fetch the sub-bags into 'data' (standard BDBag stuff)
-#
-# Usage: python bagofbags.py -m MINIDS -b BAGNAME [-V] [-q] [-d]
-#   MINIDS = name of file containing a set of Minids, one per line
-#   BAGNAME = name of directory for new BDBag
-#   -V : If provided, then once bag is created, fetch bag contents and validate it.
-#
-# Runs with >Python 2.7, AFAIK
-#
-# Limitations
-# -- Limited error checking.
-# -- manifest.json is a Research Object, but doesn't include provenance info
 
 import operator
 import json

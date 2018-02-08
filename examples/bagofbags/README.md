@@ -1,4 +1,4 @@
-# BagOfBags: Create a BDBag containing references to 1+ other BDBags
+# BagOfBags: Create a BDBag containing references to other BDBags
 
 This program uses functions from the `bdbag_api`, `bdbag_ro`, and `minid_client_api` packages
 to create a big data bag containing a supplied set of Minids,
